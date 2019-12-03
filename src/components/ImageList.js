@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ImageCard from "./ImageCard";
+import styled from 'styled-components';
+
+const Container = styled.div`
+  max-width: 800px;
+`
 
 export default function ImageList() {
     const [image, setImage] = useState([]);
@@ -19,14 +24,14 @@ useEffect(() => {
 
 
   return (
-    <div className = "container">
+    <Container>
         <ImageCard
             title = {image.title}
             explanation = {image.explanation}
             image = {image.hdurl}
             copyright = {image.copyright}
         />
-    </div>
+    </Container>
   )
 
 
